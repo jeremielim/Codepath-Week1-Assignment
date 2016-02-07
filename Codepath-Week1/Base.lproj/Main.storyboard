@@ -207,9 +207,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="passwordField:" destination="hMp-F6-L7T" eventType="editingDidEnd" id="tD2-xg-0kN"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TLr-Ek-nIG" userLabel="Create">
                                 <rect key="frame" x="255" y="28" width="57" height="30"/>
@@ -232,6 +229,10 @@
                                     <segue destination="fSp-7N-yKj" kind="modal" identifier="createdSegue" modalTransitionStyle="crossDissolve" id="g7e-tH-6ZR"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uQw-B3-Cr4" userLabel="singup strength">
+                                <rect key="frame" x="0.0" y="253" width="320" height="39"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -239,7 +240,8 @@
                     <connections>
                         <outlet property="createAccountBg" destination="rPf-gE-7kK" id="aiq-rL-UbK"/>
                         <outlet property="emailField" destination="Xye-zZ-VYP" id="2Hc-aZ-frx"/>
-                        <outlet property="passwordInput" destination="RyA-Q9-fdD" id="cXX-W9-cS7"/>
+                        <outlet property="passwordInput" destination="RyA-Q9-fdD" id="J5e-ic-PFC"/>
+                        <outlet property="signUpStrength" destination="uQw-B3-Cr4" id="T6c-AY-yfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pre-h9-Qk5" userLabel="First Responder" sceneMemberID="firstResponder"/>

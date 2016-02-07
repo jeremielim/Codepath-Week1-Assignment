@@ -9,13 +9,13 @@
 import UIKit
 
 class CreateAccountViewController: UIViewController {
+   
     @IBOutlet weak var passwordInput: UITextField!
-    
     @IBOutlet weak var createAccountBg: UIImageView!
-    
     @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var signUpStrength: UIImageView!
     
-
+    // Navigate Back to the Sign in Screens
     @IBAction func onWelcomePress(sender: AnyObject) {
         navigationController!.popViewControllerAnimated(true)
     }
@@ -24,7 +24,10 @@ class CreateAccountViewController: UIViewController {
         super.viewDidLoad()
         
         // Detect if password field has changed
-        passwordInput.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        passwordInput.addTarget(self,
+            action: "textFieldDidChange:",
+            forControlEvents: UIControlEvents.EditingChanged
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,24 +36,31 @@ class CreateAccountViewController: UIViewController {
      
     }
   
+    // Show action sheet when user tapped on create button
     @IBAction func createTap(sender: UIButton) {
+        // Close keyboard
         view.endEditing(true)
         
         let optionMenu = UIAlertController(title: "Before you can complete your registration, you must accept the Dropbox Terms of Service.", message: nil,preferredStyle: .ActionSheet)
         
         let agreeAction = UIAlertAction(title: "I Agree", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
+            
+            // Open account created screen
             self.performSegueWithIdentifier("createdSegue", sender: self)
         })
+        
         let termsAction = UIAlertAction(title: "View Terms", style: .Default, handler: {
             (alert: UIAlertAction!) -> Void in
             
+            // Open terms modal
             self.performSegueWithIdentifier("termsSegue", sender: self)
         })
         
        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
+            
             print("Cancelled")
         })
         
@@ -61,25 +71,27 @@ class CreateAccountViewController: UIViewController {
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
-    
+    // Close keyboard on background tap
     @IBAction func backgroundDidTap(sender: AnyObject) {
         view.endEditing(true)
     }
     
+    // Detect how characters to determine password strength
     func textFieldDidChange(textField: UITextField) {
         let passwordCount = Int(passwordInput.text!.utf16.count)
         
         switch passwordCount {
+            
         case 1:
-            createAccountBg.image = UIImage(named: "create1")
+            signUpStrength.image = UIImage(named: "signup_1")
         case 7:
-            createAccountBg.image = UIImage(named: "create2")
+            signUpStrength.image = UIImage(named: "signup_2")
         case 9:
-            createAccountBg.image = UIImage(named: "create3")
+            signUpStrength.image = UIImage(named: "signup_3")
         case 14:
-            createAccountBg.image = UIImage(named: "create4")
+            signUpStrength.image = UIImage(named: "signup_4")
         default:
-            ()
+            print("Nothing to see here")
         }
     }
     

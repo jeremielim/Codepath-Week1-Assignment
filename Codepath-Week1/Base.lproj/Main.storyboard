@@ -181,7 +181,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="onWelcomePress:" destination="hMp-F6-L7T" eventType="touchUpInside" id="LMr-S0-1mB"/>
-                                    <action selector="onWelcomeTap:" destination="hMp-F6-L7T" eventType="touchUpInside" id="UL3-qp-AnI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John" textAlignment="natural" minimumFontSize="17" id="WIf-jZ-dYd" userLabel="First Name Text Field">
@@ -208,13 +207,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TLr-Ek-nIG" userLabel="Create">
-                                <rect key="frame" x="255" y="28" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="createTap:" destination="hMp-F6-L7T" eventType="touchUpInside" id="5aD-bw-gld"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="03V-nR-efe" userLabel="Terms Segue">
                                 <rect key="frame" x="116" y="346" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -233,12 +225,22 @@
                                 <rect key="frame" x="0.0" y="253" width="320" height="39"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TLr-Ek-nIG" userLabel="Create">
+                                <rect key="frame" x="251" y="25" width="67" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                <state key="normal" title="Create"/>
+                                <connections>
+                                    <action selector="createTap:" destination="hMp-F6-L7T" eventType="touchUpInside" id="5aD-bw-gld"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="NL8-nQ-qZI"/>
                     <connections>
                         <outlet property="createAccountBg" destination="rPf-gE-7kK" id="aiq-rL-UbK"/>
+                        <outlet property="createButton" destination="TLr-Ek-nIG" id="8CQ-3u-GxJ"/>
                         <outlet property="emailField" destination="Xye-zZ-VYP" id="2Hc-aZ-frx"/>
                         <outlet property="passwordInput" destination="RyA-Q9-fdD" id="J5e-ic-PFC"/>
                         <outlet property="signUpStrength" destination="uQw-B3-Cr4" id="T6c-AY-yfE"/>

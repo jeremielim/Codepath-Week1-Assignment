@@ -10,6 +10,7 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
    
+    @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var createAccountBg: UIImageView!
     @IBOutlet weak var emailField: UITextField!
@@ -17,7 +18,9 @@ class CreateAccountViewController: UIViewController {
     
     // Navigate Back to the Sign in Screens
     @IBAction func onWelcomePress(sender: AnyObject) {
+        
         navigationController!.popViewControllerAnimated(true)
+    
     }
     
     override func viewDidLoad() {
@@ -90,8 +93,9 @@ class CreateAccountViewController: UIViewController {
             signUpStrength.image = UIImage(named: "signup_3")
         case 14:
             signUpStrength.image = UIImage(named: "signup_4")
+            createButton.enabled = true
         default:
-            print("Nothing to see here")
+            ()
         }
     }
     
